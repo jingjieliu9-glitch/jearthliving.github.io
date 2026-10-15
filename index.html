@@ -82,32 +82,37 @@ const closeViews = () => {
   productDetail.classList.remove('is-open');
   wallpaperDetail.classList.remove('is-open');
 };
-const openBathroom = () => {
+const setViewHash = (hash, addHistory = true) => {
+  if (window.location.hash === hash) return;
+  if (addHistory) history.pushState(null, '', hash);
+  else history.replaceState(null, '', hash);
+};
+const openBathroom = (addHistory = true) => {
   closeViews();
   portfolio.classList.add('is-category', 'is-bathroom');
   bathroomCategories.classList.add('is-open');
-  history.replaceState(null, '', '#bathroom');
+  setViewHash('#bathroom', addHistory);
   bathroomCategories.scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
-const openFurniture = () => {
+const openFurniture = (addHistory = true) => {
   closeViews();
   portfolio.classList.add('is-category', 'is-furniture');
   furnitureCategories.classList.add('is-open');
-  history.replaceState(null, '', '#home-furniture');
+  setViewHash('#home-furniture', addHistory);
   furnitureCategories.scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
-const openCurtains = () => {
+const openCurtains = (addHistory = true) => {
   closeViews();
   portfolio.classList.add('is-category', 'is-curtains');
   productDetail.classList.add('is-open');
-  history.replaceState(null, '', '#curtains');
+  setViewHash('#curtains', addHistory);
   productDetail.scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
-const openWallpaper = () => {
+const openWallpaper = (addHistory = true) => {
   closeViews();
   portfolio.classList.add('is-category', 'is-wallpaper');
   wallpaperDetail.classList.add('is-open');
-  history.replaceState(null, '', '#wallpaper');
+  setViewHash('#wallpaper', addHistory);
   wallpaperDetail.scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
 document.querySelector('[data-view="bathroom"]').addEventListener('click', (event) => { event.preventDefault(); openBathroom(); });
@@ -117,14 +122,22 @@ document.querySelector('[data-view="wallpaper"]').addEventListener('click', (eve
 document.querySelectorAll('[data-view="all-categories"]').forEach((link) => link.addEventListener('click', (event) => {
   event.preventDefault();
   closeViews();
-  history.replaceState(null, '', '#portfolio');
+  setViewHash('#portfolio');
   portfolio.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }));
 document.querySelectorAll('[data-view="home-furniture"]').forEach((link) => link.addEventListener('click', (event) => { event.preventDefault(); openFurniture(); }));
-if (window.location.hash === '#home-furniture' || window.location.hash === '#roller-blind') openFurniture();
-if (window.location.hash === '#bathroom') openBathroom();
-if (window.location.hash === '#curtains') openCurtains();
-if (window.location.hash === '#wallpaper') openWallpaper();
+const restoreViewFromHash = () => {
+  if (window.location.hash === '#home-furniture' || window.location.hash === '#roller-blind') openFurniture(false);
+  else if (window.location.hash === '#bathroom') openBathroom(false);
+  else if (window.location.hash === '#curtains') openCurtains(false);
+  else if (window.location.hash === '#wallpaper') openWallpaper(false);
+  else if (window.location.hash === '#portfolio' || !window.location.hash) {
+    closeViews();
+    portfolio.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+};
+window.addEventListener('popstate', restoreViewFromHash);
+restoreViewFromHash();
 </script>
 <footer><span>© 2026 J. EARTH LIVING</span><span>Sourcing Solutions · Lifestyle Essentials</span></footer>
 </body></html>
