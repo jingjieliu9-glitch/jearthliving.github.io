@@ -28,12 +28,15 @@ footer{border-top:1px solid var(--line);padding:28px 32px;display:flex;justify-c
 .productDetail.is-open{display:grid}
 .furnitureCategories{display:none;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
 .furnitureCategories.is-open{display:grid}
+.bathroomCategories{display:none;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+.bathroomCategories.is-open{display:grid}
 .wallpaperDetail{display:none;margin-top:26px;padding:clamp(28px,5vw,64px);background:var(--paper);border:1px solid var(--line)}
 .wallpaperDetail.is-open{display:block}
 .wallpaperDetail h3{font-size:clamp(28px,3vw,40px);font-weight:500;margin:12px 0}
 .wallpaperDetail p{max-width:650px;color:var(--soft);line-height:1.7}
 .portfolio.is-category .wrap>.eyebrow,.portfolio.is-category .wrap>h2,.portfolio.is-category .wrap>.lead,.portfolio.is-category .grid{display:none}
 .portfolio.is-furniture .furnitureCategories{display:grid}
+.portfolio.is-bathroom .bathroomCategories{display:grid}
 .portfolio.is-curtains .furnitureCategories,.portfolio.is-wallpaper .furnitureCategories{display:none}
 .productBack{display:inline-block;margin-bottom:24px;font-size:11px;letter-spacing:1.3px;text-transform:uppercase;color:var(--soft);border-bottom:1px solid var(--line);padding-bottom:5px}
 .productDetail img{display:block;width:100%;height:100%;min-height:460px;object-fit:contain;background:#fff}
@@ -42,7 +45,7 @@ footer{border-top:1px solid var(--line);padding:28px 32px;display:flex;justify-c
 .productCopy p{color:var(--soft);line-height:1.7}
 .productSpecs{display:grid;grid-template-columns:1fr 1fr;gap:16px 24px;margin:28px 0 8px;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .productSpecs div{display:grid;gap:5px}.productSpecs dt{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--soft)}.productSpecs dd{margin:0;font-size:14px}
-@media(max-width:850px){.furnitureCategories{grid-template-columns:1fr}.productDetail{grid-template-columns:1fr}.productDetail img{min-height:0;max-height:620px;aspect-ratio:1/1}}
+@media(max-width:850px){.furnitureCategories,.bathroomCategories{grid-template-columns:1fr}.productDetail{grid-template-columns:1fr}.productDetail img{min-height:0;max-height:620px;aspect-ratio:1/1}}
 @media(max-width:540px){.productSpecs{gap:14px}}
 </style>
 </head>
@@ -53,8 +56,9 @@ footer{border-top:1px solid var(--line);padding:28px 32px;display:flex;justify-c
 EARTH<br>LIVING</h1><p>Connecting businesses with reliable sourcing and manufacturing solutions in China, while bringing thoughtfully selected products to everyday life.</p><div class="actions"><a class="btn dark" href="#business">For Business</a><a class="btn" href="#shop">Shop Lifestyle</a></div></div><div class="heroVisual"><div class="visualCard"><b>FROM IDEA TO PRODUCT</b><span>Source · Develop · Manufacture · Supply</span></div></div></div></section>
 <section class="section" id="business"><div class="wrap"><div class="eyebrow">01 / For Business</div><h2>More than sourcing.<br>A practical partner.</h2><p class="lead">We work with European and international retailers, distributors, e-commerce businesses and brands to find products, develop ideas and connect them with reliable manufacturing partners in China.</p><div class="two"><div class="panel"><div class="eyebrow">SOURCING & WHOLESALE</div><h3>Find the right product.</h3><p>Product sourcing, supplier matching, wholesale supply and ongoing production support — built around your requirements and target market.</p><a class="arrow" href="#contact">Request a Quote →</a></div><div class="panel"><div class="eyebrow">OEM / PRIVATE LABEL</div><h3>Build your own range.</h3><p>Customize materials, finishes, specifications, packaging and branding, or develop a new product from an idea or existing model.</p><a class="arrow" href="#contact">Start a Project →</a></div></div><div class="flow"><div><small>01</small><h4>SOURCE</h4><p>Find suitable products and suppliers.</p></div><div><small>02</small><h4>DEVELOP</h4><p>Turn ideas into market-ready products.</p></div><div><small>03</small><h4>MANUFACTURE</h4><p>OEM & private-label production.</p></div><div><small>04</small><h4>SUPPLY</h4><p>Competitive, reliable delivery.</p></div><div><small>05</small><h4>GROW</h4><p>Build long-term repeat business.</p></div></div></div></section>
 <section id="portfolio" class="section portfolio"><div class="wrap"><div class="eyebrow">02 / Product Portfolio</div><h2>Everyday categories.<br>Flexible by nature.</h2><p class="lead">Our selected product categories are rooted in everyday living.
-Our sourcing capability, however, is not limited to one category.</p><div class="grid"><a class="cat" href="#contact"><h3>Bathroom & Toilet Seats</h3><p>Wooden, bamboo, duroplast, PP & customized models.</p></a><a class="cat" href="#contact"><h3>Eyewear</h3><p>Frames, sunglasses & private-label opportunities.</p></a><a class="cat" href="#contact"><h3>Coffee</h3><p>Coffee products, accessories & concepts.</p></a><a class="cat" href="#contact"><h3>Bedding & Textiles</h3><p>Bedding, home textiles & soft essentials.</p></a><a class="cat" href="#home-furniture"><h3>Home & Furniture</h3><p>Functional products for everyday spaces.</p></a><a class="cat" href="#contact"><h3>Custom Sourcing</h3><p>Have a product in mind? Tell us what you need.</p></a></div>
+Our sourcing capability, however, is not limited to one category.</p><div class="grid"><a class="cat" href="#bathroom" data-view="bathroom"><h3>Bathroom</h3><p>Practical bathroom essentials for everyday comfort.</p></a><a class="cat" href="#contact"><h3>Eyewear</h3><p>Frames, sunglasses & private-label opportunities.</p></a><a class="cat" href="#contact"><h3>Coffee</h3><p>Coffee products, accessories & concepts.</p></a><a class="cat" href="#contact"><h3>Bedding & Textiles</h3><p>Bedding, home textiles & soft essentials.</p></a><a class="cat" href="#home-furniture"><h3>Home & Furniture</h3><p>Functional products for everyday spaces.</p></a><a class="cat" href="#contact"><h3>Custom Sourcing</h3><p>Have a product in mind? Tell us what you need.</p></a></div>
 <div class="furnitureCategories" id="furniture-categories"><div style="grid-column:1/-1"><a class="productBack" href="#portfolio" data-view="all-categories">← All categories</a><div class="eyebrow">Home & Furniture</div><h2>Choose a category.</h2></div><a class="cat" href="#curtains" data-view="curtains"><h3>Curtains</h3><p>Window coverings for privacy and light control.</p></a><a class="cat" href="#wallpaper" data-view="wallpaper"><h3>Wallpaper</h3><p>Wall finishes to bring character to your space.</p></a></div>
+<div class="bathroomCategories" id="bathroom-categories"><div style="grid-column:1/-1"><a class="productBack" href="#portfolio" data-view="all-categories">← All categories</a><div class="eyebrow">Bathroom</div><h2>Bathroom essentials.</h2></div><a class="cat" href="#contact"><h3>Toilet Seats</h3><p>Wood, bamboo, duroplast and PP options, with custom models available.</p></a><a class="cat" href="#contact"><h3>Shower Heads</h3><p>Bathroom shower fittings designed for comfortable, everyday use.</p></a><a class="cat" href="#contact"><h3>Shower Curtains</h3><p>Practical water-resistant styles to keep your bathroom neat and dry.</p></a><a class="cat" href="#contact"><h3>Bath Sponges</h3><p>Soft bath and shower sponges for a refreshing daily routine.</p></a><a class="cat" href="#contact"><h3>Shower Caps</h3><p>Convenient reusable caps to keep hair dry while bathing.</p></a></div>
 <div class="productDetail" id="curtains"><img src="assets/roller-blind-dimensions.png" alt="Charcoal grey polyester roller blind, 80 by 180 centimetres, with mounting hardware"><div class="productCopy"><a class="productBack" href="#home-furniture" data-view="home-furniture">← Home & Furniture</a><div class="eyebrow">Curtains / Featured Product</div><h3>Charcoal Roller Blind</h3><p>A simple, modern finish for everyday spaces. This charcoal-grey roller blind brings privacy and adjustable light control to bedrooms, living rooms, home offices and more. Its clean profile pairs easily with a range of interiors, and the included mounting hardware makes installation straightforward.</p><dl class="productSpecs"><div><dt>Size</dt><dd>80 × 180 cm</dd></div><div><dt>Material</dt><dd>Polyester</dd></div><div><dt>In the box</dt><dd>1 roller blind</dd></div><div><dt>Included</dt><dd>Mounting hardware</dd></div></dl><a class="arrow" href="#contact">Ask about this product →</a></div></div>
 <div class="wallpaperDetail" id="wallpaper"><a class="productBack" href="#home-furniture" data-view="home-furniture">← Home & Furniture</a><div class="eyebrow">Home & Furniture / Wallpaper</div><h3>Wallpaper</h3><p>Explore wallpaper options to add texture, colour and character to your space. Share your preferred style, room dimensions and project needs, and we can help you find a suitable option.</p><a class="arrow" href="#contact">Ask about wallpaper →</a></div></div></section>
 <section class="darksection" id="capabilities"><div class="wrap"><div class="eyebrow">03 / Capabilities</div><h2>From a product idea<br>to a finished range.</h2><p class="lead">We combine product thinking with manufacturing access, so businesses can move from a first idea to a reliable supply solution.</p><div class="capabilities"><div class="cap"><h3>Supplier Matching</h3><p>Identify suitable factories according to product, quality, volume and target cost.</p></div><div class="cap"><h3>Product Development</h3><p>Support specifications, materials, finishes, packaging and product improvements.</p></div><div class="cap"><h3>OEM / Private Label</h3><p>Develop products under your own brand with customized production and packaging.</p></div><div class="cap"><h3>Long-Term Supply</h3><p>Build repeat orders and dependable supplier relationships around your business.</p></div></div></div></section>
@@ -68,13 +72,22 @@ For consumers, we curate practical products with a focus on quality, function an
 const portfolio = document.querySelector('#portfolio');
 const productDetail = document.querySelector('#curtains');
 const furnitureCategories = document.querySelector('#furniture-categories');
+const bathroomCategories = document.querySelector('#bathroom-categories');
 const wallpaperDetail = document.querySelector('#wallpaper');
 const furnitureCategory = document.querySelector('.cat[href="#home-furniture"]');
 const closeViews = () => {
-  portfolio.classList.remove('is-category', 'is-furniture', 'is-curtains', 'is-wallpaper');
+  portfolio.classList.remove('is-category', 'is-furniture', 'is-bathroom', 'is-curtains', 'is-wallpaper');
   furnitureCategories.classList.remove('is-open');
+  bathroomCategories.classList.remove('is-open');
   productDetail.classList.remove('is-open');
   wallpaperDetail.classList.remove('is-open');
+};
+const openBathroom = () => {
+  closeViews();
+  portfolio.classList.add('is-category', 'is-bathroom');
+  bathroomCategories.classList.add('is-open');
+  history.replaceState(null, '', '#bathroom');
+  bathroomCategories.scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
 const openFurniture = () => {
   closeViews();
@@ -97,6 +110,7 @@ const openWallpaper = () => {
   history.replaceState(null, '', '#wallpaper');
   wallpaperDetail.scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
+document.querySelector('[data-view="bathroom"]').addEventListener('click', (event) => { event.preventDefault(); openBathroom(); });
 furnitureCategory.addEventListener('click', (event) => { event.preventDefault(); openFurniture(); });
 document.querySelector('[data-view="curtains"]').addEventListener('click', (event) => { event.preventDefault(); openCurtains(); });
 document.querySelector('[data-view="wallpaper"]').addEventListener('click', (event) => { event.preventDefault(); openWallpaper(); });
@@ -108,6 +122,7 @@ document.querySelector('[data-view="all-categories"]').addEventListener('click',
 });
 document.querySelectorAll('[data-view="home-furniture"]').forEach((link) => link.addEventListener('click', (event) => { event.preventDefault(); openFurniture(); }));
 if (window.location.hash === '#home-furniture' || window.location.hash === '#roller-blind') openFurniture();
+if (window.location.hash === '#bathroom') openBathroom();
 if (window.location.hash === '#curtains') openCurtains();
 if (window.location.hash === '#wallpaper') openWallpaper();
 </script>
