@@ -114,12 +114,12 @@ document.querySelector('[data-view="bathroom"]').addEventListener('click', (even
 furnitureCategory.addEventListener('click', (event) => { event.preventDefault(); openFurniture(); });
 document.querySelector('[data-view="curtains"]').addEventListener('click', (event) => { event.preventDefault(); openCurtains(); });
 document.querySelector('[data-view="wallpaper"]').addEventListener('click', (event) => { event.preventDefault(); openWallpaper(); });
-document.querySelector('[data-view="all-categories"]').addEventListener('click', (event) => {
+document.querySelectorAll('[data-view="all-categories"]').forEach((link) => link.addEventListener('click', (event) => {
   event.preventDefault();
   closeViews();
   history.replaceState(null, '', '#portfolio');
   portfolio.scrollIntoView({ behavior: 'smooth', block: 'start' });
-});
+}));
 document.querySelectorAll('[data-view="home-furniture"]').forEach((link) => link.addEventListener('click', (event) => { event.preventDefault(); openFurniture(); }));
 if (window.location.hash === '#home-furniture' || window.location.hash === '#roller-blind') openFurniture();
 if (window.location.hash === '#bathroom') openBathroom();
